@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computación I - Componentes del Computador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 {
+      color: #2c3e50;
+    }
+    a {
+      color: #2a3a8b;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Semana 2: Componentes del Computador – Computación I</h1>
+  <h2>Computación I – Semana 2</h2>
+  <h3>Componentes del Computador y su Uso Educativo</h3>
+  <p>Exploración completa del hardware y software en contextos pedagógicos</p>
+  <p><strong>Profesor:</strong> Miguel Subero<br><strong>Universidad:</strong> José María Vargas</p>
+
+  <h3>¿Qué es un Computador?</h3>
+  <p>Un computador es una máquina electrónica que procesa datos y los convierte en información útil. Su funcionamiento se basa en dos conceptos fundamentales:</p>
+
+  <h4>Hardware</h4>
+  <ul>
+    <li>CPU: Cerebro del computador</li>
+    <li>Memoria RAM: Memoria de trabajo temporal</li>
+    <li>Disco Duro: Almacenamiento permanente</li>
+    <li>Periféricos: Dispositivos de entrada/salida</li>
+  </ul>
+
+  <h4>Software</h4>
+  <ul>
+    <li>Sistema Operativo: Windows, Linux, macOS</li>
+    <li>Aplicaciones: Word, Excel, Navegadores</li>
+    <li>Utilidades: Antivirus, Compresores</li>
+    <li>Lenguajes: Python, Java, JavaScript</li>
+  </ul>
+
+  <h3>Actividad Interactiva: Partes de un Ordenador</h3>
+  <p>Explora este recurso interactivo de Genially para aprender sobre los componentes del computador de manera dinámica:</p>
+  <p><a href="https://view.genially.com/5eb9816c3b952f0d022f1a22/learning-experience-challenges-partes-de-un-ordenador" targetd en Genially</a></p>
+  <h5>Cómo usar esta actividad:</h5>
+  <ul>
+    <li>Completa los desafíos para identificar componentes</li>
+    <li>Arrastra y suelta los elementos en su lugar correcto</li>
+    <li>Responde las preguntas interactivas</li>
+    <li>Toma capturas de pantalla de tu progreso como evidencia</li>
+  </ul>
+
+  <h3>Componentes Principales del Computador</h3>
+  <h4>Diagrama Interactivo: Flujo de Información</h4>
+  <ul>
+    <li>Teclado → Entrada</li>
+    <li>Mouse → Entrada</li>
+    <li>CPU – Unidad Central de Procesamiento: Procesa todas las instrucciones y coordina los componentes</li>
+    <li>Monitor → Salida</li>
+    <li>Impresora → Salida</li>
+  </ul>
+
+  <h3>Actividad de la Semana: Infografía Educativa</h3>
+  <p>Crea una infografía que explique los componentes del computador y su aplicación en contextos educativos.</p>
+  <h5>Requisitos</h5>
+  <ul>
+    <li>6 componentes mínimo</li>
+    <li>Función de cada uno</li>
+    <li>Uso educativo</li>
+    <li>Diseño atractivo</li>
+  </ul>
+  <h5>Criterios de Evaluación</h5>
+  <ul>
+    <li>Contenido (20 pts)</li>
+    <li>Creatividad (10 pts)</li>
+    <li>Aplicación educativa (10 pts)</li>
+  </ul>
+
+  <h3>Evaluación Rápida: Componentes del Computador</h3>
+  <h5>Pregunta 1: ¿Qué componente es considerado el "cerebro" del computador?</h5>
+  <ul>
+    <li>✅ CPU – Correcto</li>
+    <li>❌ Memoria RAM – Incorrecto</li>
+    <li>❌ Disco Duro – Incorrecto</li>
+  </ul>
+
+  <h5>Pregunta 2: ¿Qué tipo de periférico es un teclado?</h5>
+  <ul>
+    <li>✅ De Entrada – Correcto</li>
+    <li>❌ De Salida – Incorrecto</li>
+    <li>❌ De Almacenamiento – Incorrecto</li>
+  </ul>
+
+  <h3>Recursos de Apoyo</h3>
+  <ul>
+    <li><a href="https://genially.com/" targettaforma para crear infografías interactivas</li>
+    <li>https://canva.com/Canva</a>: Herramienta de diseño gráfico</li>
+    <li>https://phet.colorado.edu/es/simulations/filter?subjects=physics&type=html,prototypeSimuladores</a>: Práctica virtual con componentes</li>
+    <li>https://chat.openai.com/Asistente IA</a>: Consulta definiciones y ejemplos</li>
+  </ul>
+
+  <h3>Competencias a Desarrollar</h3>
+  <ul>
+    <li>Comprensión Tecnológica</li>
+    <li>Aplicación Pedagógica</li>
+    <li>Pensamiento Crítico</li>
+  </ul>
+
+  <h3>Instrucciones Detalladas – Infografía Educativa</h3>
+  <h5>Objetivo:</h5>
+  <p>Crear una infografía educativa sobre los componentes del computador y su aplicación pedagógica.</p>
+  <h5>Requisitos técnicos:</h5>
+  <ul>
+    <li>Formato: Imagen (JPG/PNG) o PDF de 1 página</li>
+    <li>Componentes: Mínimo 6 diferentes</li>
+    <li>Contenido: Función técnica + uso educativo</li>
+    <li>Herramientas sugeridas: Canva, Genially, Piktochart</li>
+  </ul>
+  <h5>Fecha de entrega:</h5>
+  <p>15 de noviembre de 2025</p>
+  <h5>Checklist de progreso:</h5>
+  <ul>
+    <li>Investigar los componentes</li>
+    <li>Seleccionar al menos 6</li>
+    <li>Redactar función y uso educativo</li>
+    <li>Diseñar la infografía</li>
+    <li>Revisar ortografía y claridad</li>
+    <li>Exportar y subir al portal</li>
+  </ul>
+
+  <footer>
+    <p>Computación I – Universidad José María Vargas<br>Prof. Miguel Subero<br>© 2025 – Material desarrollado para fines educativos</p>
+  </footer>
+</body>
+</html>
