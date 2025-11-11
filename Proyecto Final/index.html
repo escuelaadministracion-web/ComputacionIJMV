@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final: Tu Aula Virtual en Google Classroom</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            border: 2px solid #2575fc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+        }
+        
+        .professor-name {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            margin: 25px 0;
+        }
+        
+        .section-title {
+            color: #2575fc;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .step-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #2575fc;
+        }
+        
+        .step-card h3 {
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+        
+        .step-card ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .step-card li {
+            margin-bottom: 5px;
+        }
+        
+        .tools-section {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .tools-section h2 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .tool-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tool-card h4 {
+            color: #2575fc;
+            margin: 10px 0;
+        }
+        
+        .tips-section {
+            background: #fff3e0;
+            padding: 20px;
+            border-left: 4px solid #ff9800;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tips-section h2 {
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .tip-card h4 {
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+        
+        .evaluation-section {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .evaluation-section h2 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        
+        .evaluation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .evaluation-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 2px solid #2575fc;
+        }
+        
+        .evaluation-card h4 {
+            color: #2575fc;
+            margin: 0 0 10px 0;
+        }
+        
+        .evaluation-points {
+            font-size: 1.5rem;
+            color: #2575fc;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .criteria-list {
+            text-align: left;
+            margin-top: 10px;
+        }
+        
+        .criteria-list ul {
+            padding-left: 20px;
+        }
+        
+        .criteria-list li {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .defense-section {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .defense-section h2 {
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+        
+        .defense-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .defense-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 2px solid #ff9800;
+        }
+        
+        .defense-card h4 {
+            color: #e65100;
+            margin: 0 0 10px 0;
+        }
+        
+        .defense-points {
+            font-size: 1.5rem;
+            color: #e65100;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .total-score {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .presentation-section {
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .presentation-section h2 {
+            color: #7b1fa2;
+            margin-bottom: 15px;
+        }
+        
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .presentation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .evaluation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .defense-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .presentation-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .presentation-card h4 {
+            color: #7b1fa2;
+            margin-bottom: 10px;
+        }
+        
+        .contact {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .contact p {
+            margin: 0;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="professor-name">Lic. Miguel Angel Subero</div>
+                <h1>Proyecto Final: Tu Aula Virtual en Google Classroom</h1>
+                <p>Crea tu propio espacio educativo sobre un tema que te apasione</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">🎯 Objetivo</h2>
+                <p>Crear un aula virtual sencilla en Google Classroom, con recursos básicos, actividades y una pequeña evaluación, sobre el tema que más te guste (puede ser de tu carrera, un hobby, algo que te apasione).</p>
+            </div>
+            
+            <div class="highlight-box">
+                ¡Usa tu creatividad y diviértete creando tu aula!
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">✅ Paso a Paso para Crear tu Aula Virtual</h2>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <h3>🔹 Paso 1: Elige tu tema</h3>
+                        <ul>
+                            <li>Puede ser educativo (por ejemplo: "Ortografía básica", "Contabilidad para principiantes")</li>
+                            <li>O algo que te guste (por ejemplo: "Cómo cuidar plantas", "Historia del reguetón")</li>
+                            <li>Escribe un título llamativo para tu aula</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <h3>🔹 Paso 2: Crea tu aula en Google Classroom</h3>
+                        <ul>
+                            <li>Entra a Google Classroom</li>
+                            <li>Haz clic en el símbolo + y selecciona "Crear clase"</li>
+                            <li>Coloca el nombre de tu clase, una breve descripción y elige una imagen de fondo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <h3>🔹 Paso 3: Organiza tu contenido</h3>
+                        <ul>
+                            <li>Crea 2 o 3 temas (por ejemplo: Introducción, Actividades, Evaluación)</li>
+                            <li>En cada tema, publica algo sencillo:
+                                <ul>
+                                    <li>Un texto explicativo</li>
+                                    <li>Una imagen creada con IA</li>
+                                    <li>Un recurso hecho por ti (infografía, presentación, video corto)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <h3>🔹 Paso 4: Diseña una actividad</h3>
+                        <ul>
+                            <li>Usa Google Forms para hacer un pequeño cuestionario</li>
+                            <li>También puedes usar Educaplay para crear un juego educativo</li>
+                            <li>Publica la actividad en tu aula con instrucciones claras</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <h3>🔹 Paso 5: Crea una evaluación sencilla</h3>
+                        <ul>
+                            <li>Puede ser:
+                                <ul>
+                                    <li>Un formulario con 3 preguntas</li>
+                                    <li>Una tarea donde el "estudiante" debe subir una imagen o responder algo</li>
+                                </ul>
+                            </li>
+                            <li>Simula que alguien responde y publica una retroalimentación breve</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <h3>🔹 Paso 6: Presenta tu aula</h3>
+                        <ul>
+                            <li>Prepara una explicación de 3 minutos:
+                                <ul>
+                                    <li>¿Por qué elegiste ese tema?</li>
+                                    <li>¿Qué herramientas usaste?</li>
+                                    <li>¿Qué aprendiste al crear tu aula?</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tools-section">
+                <h2>🛠️ Herramientas que puedes usar</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h4>Google Classroom</h4>
+                        <p>Para crear el aula</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Google Docs / Slides / Forms</h4>
+                        <p>Para recursos y actividades</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Educaplay</h4>
+                        <p>Para juegos educativos</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Copilot o Bing Image Creator</h4>
+                        <p>Para imágenes con IA</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Canva</h4>
+                        <p>Para infografías</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tips-section">
+                <h2>💡 Consejos</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>No te preocupes por la perfección</h4>
+                        <p>Lo importante es intentar y aprender. No tiene que ser perfecto.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Pide ayuda si la necesitas</h4>
+                        <p>Puedes pedir ayuda a tus compañeras o al profesor si te bloqueas.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Disfruta el proceso</h4>
+                        <p>¡Usa tu creatividad y diviértete creando tu aula!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="evaluation-section">
+                <h2>📊 Instrumento de Evaluación - Proyecto Final (250 pts)</h2>
+                <div class="evaluation-grid">
+                    <div class="evaluation-card">
+                        <h4>Integración de herramientas digitales</h4>
+                        <div class="evaluation-points">80 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Uso apropiado de Google Classroom</li>
+                                <li>Implementación de recursos digitales</li>
+                                <li>Integración de herramientas complementarias</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="evaluation-card">
+                        <h4>Aplicación educativa</h4>
+                        <div class="evaluation-points">60 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Pertinencia del contenido</li>
+                                <li>Calidad de las actividades</li>
+                                <li>Adecuación al nivel educativo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="evaluation-card">
+                        <h4>Organización y presentación</h4>
+                        <div class="evaluation-points">40 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Estructura clara del aula</li>
+                                <li>Diseño atractivo y funcional</li>
+                                <li>Navegación intuitiva</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="evaluation-card">
+                        <h4>Creatividad y reflexión</h4>
+                        <div class="evaluation-points">70 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Originalidad en el enfoque</li>
+                                <li>Innovación en recursos</li>
+                                <li>Reflexión sobre el proceso</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="total-score">TOTAL PROYECTO: 250 PUNTOS</div>
+            </div>
+            
+            <div class="defense-section">
+                <h2>🎤 Defensa del Proyecto (200 pts)</h2>
+                <div class="defense-grid">
+                    <div class="defense-card">
+                        <h4>Dominio del contenido</h4>
+                        <div class="defense-points">80 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Conocimiento profundo del tema</li>
+                                <li>Claridad en la exposición</li>
+                                <li>Fundamentación de decisiones</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="defense-card">
+                        <h4>Trabajo en equipo</h4>
+                        <div class="defense-points">50 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Colaboración efectiva</li>
+                                <li>Distribución de tareas</li>
+                                <li>Coordinación en la presentación</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="defense-card">
+                        <h4>Uso de recursos tecnológicos</h4>
+                        <div class="defense-points">40 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Aprovechamiento de herramientas</li>
+                                <li>Calidad de materiales</li>
+                                <li>Integración tecnológica</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="defense-card">
+                        <h4>Respuesta a preguntas</h4>
+                        <div class="defense-points">30 puntos</div>
+                        <div class="criteria-list">
+                            <ul>
+                                <li>Claridad en respuestas</li>
+                                <li>Capacidad de argumentación</li>
+                                <li>Manejo de objeciones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="total-score">TOTAL DEFENSA: 200 PUNTOS</div>
+                <div class="total-score" style="margin-top: 10px;">PUNTUACIÓN GLOBAL: 450 PUNTOS</div>
+            </div>
+            
+            <div class="presentation-section">
+                <h2>🎤 Presentación de tu Aula Virtual</h2>
+                <div class="presentation-grid">
+                    <div class="presentation-card">
+                        <h4>Prepara tu explicación de 3 minutos:</h4>
+                        <ul>
+                            <li>¿Por qué elegiste ese tema?</li>
+                            <li>¿Qué herramientas usaste?</li>
+                            <li>¿Qué aprendiste al crear tu aula?</li>
+                            <li>Muestra los elementos más destacados de tu aula</li>
+                        </ul>
+                    </div>
+                    <div class="presentation-card">
+                        <h4>Elementos a incluir:</h4>
+                        <ul>
+                            <li>Pantallazos de tu aula organizada</li>
+                            <li>Ejemplo de actividad creada</li>
+                            <li>Recursos que desarrollaste</li>
+                            <li>Ejemplo de evaluación</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <p><strong>¿Preguntas?</strong> Contacta al profesor: Lic. Miguel Angel Subero</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
