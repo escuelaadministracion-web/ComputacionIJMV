@@ -4,10 +4,6 @@
 **Duración:** 8 semanas  
 **Modalidad:** Mixta (1 encuentro síncrono semanal + actividades asíncronas)
 
----
-
-# Computación I - Universidad José María Vargas
-
 Repositorio oficial del curso Computación I dictado por el Prof. Miguel Subero.
 
 ## 📚 Estructura del Curso
