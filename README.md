@@ -6,69 +6,32 @@
 
 ---
 
-## 🎯 Propósito del Curso
+# Computación I - Universidad José María Vargas
 
-La asignatura Computación I tiene como propósito fundamental introducir al estudiante en el uso pedagógico de herramientas digitales, fomentando competencias básicas en el manejo de tecnologías aplicadas a la educación. El curso culmina con el diseño de un aula virtual simulada como proyecto final.
+Repositorio oficial del curso Computación I dictado por el Prof. Miguel Subero.
 
----
+## 📚 Estructura del Curso
 
-## 🧠 Competencias Clave
+- **Página Principal**: `index.html` (Visión general del curso)
+- **Clases**: Organizadas por semanas en la carpeta `clases/`
+- **Proyecto Final**: Instrucciones detalladas en `proyecto-final/`
 
-- Alfabetización digital básica  
-- Pensamiento crítico y contextualización  
-- Producción de contenido educativo  
-- Trabajo colaborativo y uso de IA  
-- Planificación instruccional  
-- Creatividad e integración tecnológica
+## 🗓️ Semanas del Curso
 
----
+1. Semana 1: Introducción a la Computación
+2. Semana 2: Componentes del Computador
+3. Semana 3: Sistemas Operativos
+4. Semana 4: Formato de Texto
+5. [Semana 5: Fases del Proyecto](clases/semana-5/)
+6. Semana 6: Herramientas Colaborativas
+7. Semana 7: Diseño de Aulas Virtuales
+8. Semana 8: Presentación Final
 
-## 📅 Planificación Semanal
+## 📁 Acceso Rápido
 
-| Semana | Tema | Actividad Asíncrona | Unidad | Competencia |
-|--------|------|----------------------|--------|-------------|
-| 1 | ¿Qué es ser docente digital? | Hilo de discusión: Impacto de la computación | Unidad I | Pensamiento crítico |
-| 2 | Componentes del computador | Infografía educativa | Unidad I | Alfabetización digital |
-| 3 | Sistemas operativos | Comparación de plataformas | Unidad II | Selección de herramientas |
-| 4 | Diseño de recursos | Examen teórico-práctico | Unidad II | Producción de contenido |
-| 5 | Hojas de cálculo y presentaciones | Tarea aplicada | Unidad II | Organización de información |
-| 6 | Herramientas colaborativas e IA | Hilo de discusión | Unidad III | Trabajo colaborativo |
-| 7 | Diseño de aulas virtuales | Investigación + Simulación | Unidad III | Planificación instruccional |
-| 8 | Presentación final | Proyecto: Aula virtual simulada | Unidad III | Integración y defensa oral |
-
----
-
-## 🧪 Evaluación
-
-### Proyecto Final (250 pts)
-- Integración de herramientas digitales (80 pts)  
-- Aplicación educativa (60 pts)  
-- Organización y presentación (40 pts)  
-- Creatividad y reflexión (70 pts)
-
-### Defensa Oral (200 pts)
-- Dominio del contenido (80 pts)  
-- Trabajo en equipo (50 pts)  
-- Uso de recursos tecnológicos (40 pts)  
-- Respuesta a preguntas (30 pts)
-
----
-
-## 📂 Recursos del Repositorio
-
-- `Clase Computacion I Fase B2.0.html`: Recurso interactivo sobre componentes del computador.  
-- `infografias/`: Plantillas y ejemplos para actividades visuales.  
-- `evaluaciones/`: Instrumentos de evaluación y rúbricas.  
-- `proyecto-final/`: Guía y entregables del aula virtual simulada.
-
----
-
-## 📚 Referencias Académicas
-
-- Cabero Almenara, J. (2020). *Tecnología educativa*. Editorial Síntesis.  
-- Area Moreira, M. (2018). *Introducción a la tecnología educativa*. Universidad de La Laguna.  
-- Bates, T. (2019). *Teaching in a Digital Age*. Open Textbook Library.
-
+- [🏠 Página Principal](index.html)
+- [🎓 Proyecto Final](proyecto-final/index.html)
+- [📋 Semana 5 - Fases](clases/semana-5/)
 ---
 
 > Este repositorio forma parte del curso **Computación I** impartido en la Universidad José María Vargas. Todos los materiales son de uso educativo y fueron desarrollados por el profesor Miguel Ángel Subero.
