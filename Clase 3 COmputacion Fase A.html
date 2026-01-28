@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 3 - Sistemas Operativos y Plataformas Educativas</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .week-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .info-card h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-card h2 i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .objective {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--success);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--secondary);
+        }
+        
+        .time {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .activity {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .evaluation {
+            background-color: #e8f4fc;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .criterion {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .points {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin: 10px 0;
+        }
+        
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-card h3 i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+        }
+        
+        @media (max-width: 768px) {
+            .week-info {
+                flex-direction: column;
+            }
+            
+            .objectives, .criteria-grid, .resources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Semana 3: Sistemas Operativos y Plataformas Educativas</h1>
+                <p class="subtitle">Computación I - Planificación Adaptada</p>
+            </div>
+        </header>
+        
+        <div class="week-info">
+            <div><strong>Unidad:</strong> II</div>
+            <div><strong>Competencia Clave:</strong> Selección de herramientas</div>
+            <div><strong>Actividad Evaluada:</strong> Hilo de Discusión 2 (20 pts)</div>
+        </div>
+        
+        <div class="info-card">
+            <h2><span class="icon">🎯</span>Objetivos de la Semana</h2>
+            <div class="objectives">
+                <div class="objective">Comprender qué son los sistemas operativos y su importancia</div>
+                <div class="objective">Conocer las principales plataformas educativas digitales</div>
+                <div class="objective">Desarrollar capacidad de selección de herramientas tecnológicas adecuadas</div>
+                <div class="objective">Realizar comparaciones críticas entre diferentes sistemas</div>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h2><span class="icon">🏫</span>Clase Síncrona - 90 minutos</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">0-15 min</div>
+                    <div class="activity">
+                        <h3>Actividad Rompehielos: "Mi Primer Computador"</h3>
+                        <p><strong>Dinámica colaborativa usando Padlet</strong></p>
+                        <ul>
+                            <li>Cada estudiante comparte una foto o descripción del primer computador que usó</li>
+                            <li>Identifican qué sistema operativo tenía</li>
+                            <li>Comparten una anécdota de su primera experiencia digital</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">15-35 min</div>
+                    <div class="activity">
+                        <h3>¿Qué es un Sistema Operativo?</h3>
+                        <p><strong>Analogía didáctica</strong>: "El director de orquesta digital"</p>
+                        <p>El SO es como el director de una orquesta:</p>
+                        <ul>
+                            <li>Coordina todos los instrumentos (hardware)</li>
+                            <li>Asegura que cada músico (software) toque en armonía</li>
+                            <li>Da las instrucciones para que suene la música (funciones)</li>
+                        </ul>
+                        
+                        <p><strong>Tipos principales:</strong></p>
+                        <ul>
+                            <li>🪟 <strong>Windows</strong> → El más común, fácil de usar</li>
+                            <li>🍎 <strong>macOS</strong> → Diseño intuitivo, creativo</li>
+                            <li>🐧 <strong>Linux</strong> → Libre y personalizable</li>
+                            <li>📱 <strong>Android/iOS</strong> → Para dispositivos móviles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">35-60 min</div>
+                    <div class="activity">
+                        <h3>Comparación Visual Colaborativa</h3>
+                        <p><strong>Actividad en grupos usando Google Docs</strong></p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Grupo</th>
+                                    <th>Sistemas a Comparar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Grupo 1</td>
+                                    <td>Windows vs macOS</td>
+                                </tr>
+                                <tr>
+                                    <td>Grupo 2</td>
+                                    <td>Linux vs Android</td>
+                                </tr>
+                                <tr>
+                                    <td>Grupo 3</td>
+                                    <td>iOS vs Chrome OS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <p><strong>Cada grupo completa una tabla comparativa:</strong></p>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Sistema A</th>
+                                    <th>Sistema B</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Facilidad de uso</td>
+                                    <td>⭐⭐⭐</td>
+                                    <td>⭐⭐⭐⭐</td>
+                                </tr>
+                                <tr>
+                                    <td>Costo</td>
+                                    <td>💰💰</td>
+                                    <td>💰</td>
+                                </tr>
+                                <tr>
+                                    <td>Seguridad</td>
+                                    <td>🔒🔒</td>
+                                    <td>🔒🔒🔒</td>
+                                </tr>
+                                <tr>
+                                    <td>Uso educativo</td>
+                                    <td>🎓🎓</td>
+                                    <td>🎓🎓🎓</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">60-75 min</div>
+                    <div class="activity">
+                        <h3>Plataformas Educativas - Demostración</h3>
+                        <p><strong>Tour visual interactivo</strong>:</p>
+                        <ul>
+                            <li><strong>Google Classroom</strong>: Simplicidad e integración</li>
+                            <li><strong>Moodle</strong>: Personalización y potencia</li>
+                        </ul>
+                        
+                        <p><strong>Características clave:</strong></p>
+                        <ul>
+                            <li>Creación de cursos</li>
+                            <li>Gestión de estudiantes</li>
+                            <li>Evaluaciones y seguimiento</li>
+                            <li>Recursos multimedia</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">75-90 min</div>
+                    <div class="activity">
+                        <h3>Actividad Práctica Colaborativa: "Elige Tu Herramienta Ideal"</h3>
+                        <p><strong>Objetivo</strong>: Seleccionar la mejor combinación SO + Plataforma para diferentes escenarios</p>
+                        
+                        <p><strong>Escenarios de trabajo:</strong></p>
+                        <ol>
+                            <li>Escuela rural con internet limitado</li>
+                            <li>Universidad con recursos avanzados</li>
+                            <li>Curso para adultos mayores</li>
+                            <li>Taller de programación para jóvenes</li>
+                        </ol>
+                        
+                        <p><strong>Entregable</strong>: Cada grupo presenta en 3 minutos su elección y justificación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-card evaluation">
+            <h2><span class="icon">📋</span>Actividad Evaluada - Hilo de Discusión 2</h2>
+            <p><strong>"Comparación de Sistemas Operativos" (20 puntos)</strong></p>
+            
+            <h3>Instrucciones:</h3>
+            <ol>
+                <li><strong>Accede</strong> al foro de discusión en el aula virtual</li>
+                <li><strong>Analiza</strong> los videos comparativos de sistemas operativos proporcionados</li>
+                <li><strong>Responde</strong> la siguiente pregunta guía:</li>
+            </ol>
+            
+            <div style="background: white; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <h3 style="color: var(--accent);">Pregunta Central:</h3>
+                <p><em>"Si tuvieras que recomendar un sistema operativo para una escuela con recursos limitados, ¿cuál elegirías y por qué? Considera costo, facilidad de uso y aplicaciones educativas disponibles."</em></p>
+            </div>
+            
+            <h3>Criterios de Evaluación:</h3>
+            <div class="criteria-grid">
+                <div class="criterion">
+                    <h4>Análisis de costos</h4>
+                    <div class="points">5 pts</div>
+                    <p>Evalúa aspectos económicos y de mantenimiento</p>
+                </div>
+                <div class="criterion">
+                    <h4>Facilidad de uso</h4>
+                    <div class="points">5 pts</div>
+                    <p>Considera la curva de aprendizaje</p>
+                </div>
+                <div class="criterion">
+                    <h4>Aplicaciones educativas</h4>
+                    <div class="points">5 pts</div>
+                    <p>Identifica software educativo disponible</p>
+                </div>
+                <div class="criterion">
+                    <h4>Interacción con compañeros</h4>
+                    <div class="points">5 pts</div>
+                    <p>Responde a mínimo 2 compañeros con argumentos sólidos</p>
+                </div>
+            </div>
+            
+            <h3>Requisitos de Participación:</h3>
+            <ul>
+                <li><strong>Publicación inicial</strong>: Mínimo 200 palabras, fundamentada con ejemplos</li>
+                <li><strong>Respuestas a compañeros</strong>: 2 respuestas de al menos 100 palabras cada una</li>
+                <li><strong>Fecha límite</strong>: [Indicar fecha según calendario del curso]</li>
+                <li><strong>Formato</strong>: Puedes incluir imágenes o ejemplos concretos</li>
+            </ul>
+            
+            <h3>Rúbrica Simplificada:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Nivel</th>
+                        <th>Puntuación</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>✅ Excelente</td>
+                        <td>18-20 pts</td>
+                        <td>Análisis profundo, ejemplos concretos, interacción significativa</td>
+                    </tr>
+                    <tr>
+                        <td>✅ Bueno</td>
+                        <td>15-17 pts</td>
+                        <td>Análisis completo, algunos ejemplos, interacción adecuada</td>
+                    </tr>
+                    <tr>
+                        <td>✅ Regular</td>
+                        <td>12-14 pts</td>
+                        <td>Análisis básico, pocos ejemplos, interacción mínima</td>
+                    </tr>
+                    <tr>
+                        <td>❌ Insuficiente</td>
+                        <td>0-11 pts</td>
+                        <td>Análisis superficial, sin ejemplos, sin interacción</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <a href="#" class="btn">Acceder al Foro de Discusión</a>
+        </div>
+        
+        <div class="info-card">
+            <h2><span class="icon">📚</span>Recursos Adicionales</h2>
+            <div class="resources">
+                <div class="resource-card">
+                    <h3><span class="icon">🎥</span>Videos Recomendados</h3>
+                    <ul>
+                        <li>"Sistemas Operativos en 5 minutos" - Explicación visual</li>
+                        <li>"Tour por Google Classroom" - Demo práctica</li>
+                        <li>"Moodle para principiantes" - Guía paso a paso</li>
+                    </ul>
+                    <a href="#" class="btn">Ver Videos</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3><span class="icon">📖</span>Materiales de Consulta</h3>
+                    <ul>
+                        <li>Infografía comparativa: Windows vs macOS vs Linux</li>
+                        <li>Guía rápida de Google Classroom</li>
+                        <li>Manual básico de Moodle</li>
+                    </ul>
+                    <a href="#" class="btn">Descargar Materiales</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3><span class="icon">🛠</span>Herramientas para la Actividad</h3>
+                    <ul>
+                        <li>Google Docs para trabajo colaborativo</li>
+                        <li>Padlet para lluvia de ideas</li>
+                        <li>Plantillas de comparación pre-diseñadas</li>
+                    </ul>
+                    <a href="#" class="btn">Acceder a Herramientas</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h2><span class="icon">💬</span>Cierre Motivacional</h2>
+            <p style="font-style: italic; font-size: 1.1rem; padding: 15px; background-color: var(--light); border-radius: 8px;">
+                "Dominar los sistemas operativos y plataformas educativas es como aprender el mapa del mundo digital. Una vez que conoces el territorio, puedes elegir el mejor camino para llegar a tus estudiantes."
+            </p>
+            
+            <div style="margin-top: 20px; padding: 15px; background-color: #e8f4fc; border-radius: 8px;">
+                <h3>Próxima Semana:</h3>
+                <p><strong>📌 Semana 4:</strong> Formato de texto y diseño de recursos + Examen 1</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Computación I - Planificación Adaptada</p>
+            <p>¡Recuerda que esta actividad te prepara para tomar decisiones informadas sobre tecnología educativa! 🚀</p>
+        </footer>
+    </div>
+</body>
+</html>
