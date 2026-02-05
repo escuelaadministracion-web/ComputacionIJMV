@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Unidad II: Recursos Didácticos con IA</title>
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #c62828; /* Rojo Caracas/Caperucita */
+            --accent: #fbc02d;
+            --light: #fdfdfd;
+            --dark: #212121;
+            --success: #2e7d32;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #0d47a1);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        
+        h1 { font-size: 2.4rem; margin-bottom: 10px; }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--secondary); padding-bottom: 10px; margin: 35px 0 20px; }
+        
+        .score-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary);
+        }
+
+        .challenge-card { border-left-color: var(--secondary); }
+        .help-card { border-left-color: var(--success); background-color: #f1f8e9; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        th { background-color: var(--primary); color: white; padding: 15px; text-align: left; }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
+        tr:hover { background-color: #f5f5f5; }
+
+        .prompt-template {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .tag {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .delivery-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #bbdefb;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            color: #757575;
+            border-top: 1px solid #ccc;
+        }
+
+        .btn-help {
+            background: var(--success);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Examen Unidad II: Narrativas Didácticas con IA</h1>
+        <p>Computación I - Mención Educación</p>
+        <div class="score-badge">Valor: 120 Puntos</div>
+    </header>
+
+    <section>
+        <h2>1. El Reto: Los Tres Cerditos en Caracas</h2>
+        <div class="card challenge-card">
+            <p>Deberás crear un recurso didáctico digital utilizando Inteligencia Artificial. La misión es adaptar el cuento clásico de <strong>"Los Tres Cerditos"</strong> a la realidad de <strong>Caracas, Venezuela</strong>, aplicando un enfoque pedagógico específico según tu asignación.</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Estudiante</th>
+                    <th>Diferenciador (Enfoque)</th>
+                    <th>Contexto Caraqueño</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Villalba Ramírez, Nicolle</strong></td>
+                    <td>Narrativa Transmedia</td>
+                    <td>Alertas de tránsito y reportes en RRSS sobre el Lobo en la ciudad.</td>
+                </tr>
+                <tr>
+                    <td><strong>Pittaluga Ascanio, Akira</strong></td>
+                    <td>Inclusión (DUA)</td>
+                    <td>Construcción de una escuela accesible en El Valle para todos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Domínguez Terán, Lakmy</strong></td>
+                    <td>Enfoque STEAM</td>
+                    <td>Cerditos ingenieros usando software para diseñar refugios tecnológicos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Rodríguez Bastidas, Joymar</strong></td>
+                    <td>Ed. Ambiental</td>
+                    <td>Protección de El Ávila contra incendios y deforestación (El Lobo).</td>
+                </tr>
+                <tr>
+                    <td><strong>Quijada, Andrea José</strong></td>
+                    <td>Inteligencia Emocional</td>
+                    <td>Manejo del estrés y la convivencia en la dinámica urbana de Caracas.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gonzalez, Georgianny Cruz</strong></td>
+                    <td>Gamificación</td>
+                    <td>El cuento como un videojuego de niveles recorriendo la capital.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>2. Estructura de la Presentación (11 Diapositivas)</h2>
+        <div class="card">
+            <p>Tu producto final debe ser una presentación funcional para el aula con el siguiente orden:</p>
+            <ul>
+                <li><strong>Diapositiva 1:</strong> Portada (Título creativo + Imagen principal IA).</li>
+                <li><strong>Diapositiva 2:</strong> Introducción: Personajes y Escenario (Caracas).</li>
+                <li><strong>Diapositivas 3-6:</strong> Desarrollo de la historia adaptada.</li>
+                <li><strong>Diapositiva 7:</strong> Clímax (Punto de mayor tensión dramática).</li>
+                <li><strong>Diapositiva 8:</strong> Resolución y final pedagógico.</li>
+                <li><strong>Diapositiva 9:</strong> Valores y enseñanzas según tu enfoque asignado.</li>
+                <li><strong>Diapositiva 10:</strong> Actividad 1 (Evaluación formativa de comprensión).</li>
+                <li><strong>Diapositiva 11:</strong> Actividad 2 (Desarrollo de pensamiento creativo).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Plantilla de Ayuda para Prompts</h2>
+        <div class="card help-card">
+            <p>Copia y adapta esta estructura en tu IA (Gemini o ChatGPT) para obtener mejores resultados:</p>
+            <div class="prompt-template">
+                "Actúa como un <span class="tag">experto en diseño instruccional</span>. Genera un cuento infantil basado en los Tres Cerditos situado en <span class="tag">Caracas, Venezuela</span>. Los personajes deben <span class="tag">[Tu misión específica]</span>. El lenguaje debe ser apropiado para niños de primaria. Al final, propón una actividad interactiva sobre <span class="tag">[Tu enfoque asignado]</span>."
+            </div>
+            <p><strong>Consejo:</strong> Para las imágenes, pide estilos coherentes como "Ilustración digital tipo acuarela infantil" en todas tus diapositivas.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Formato y Normas de Entrega</h2>
+        <div class="delivery-info">
+            <div class="info-box">
+                <strong>Formatos Aceptados:</strong><br>
+                PDF, Google Slides (Enlace público) o PowerPoint (.pptx).
+            </div>
+            <div class="info-box">
+                <strong>Nomenclatura:</strong><br>
+                Apellido_Nombre_ExamenU2_ComputacionI
+            </div>
+            <div class="info-box">
+                <strong>Requisito IA:</strong><br>
+                Debes incluir los prompts utilizados en la última lámina.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Material diseñado para la formación docente en el uso de IA educativa</p>
+        <p><strong>Prof. Miguel Subero</strong> - Caracas, 2026</p>
+    </footer>
+
+</body>
+</html>
